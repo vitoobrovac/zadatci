@@ -44,7 +44,7 @@ let button = document.getElementById('gumbic');
             if (unosC === dva) {
                 dynamicLink.classList.add("linkzasobu");
                 dynamicLink.textContent = "zadatak 4";
-                dynamicLink.href="/soba_cetvrta/soba_cetvrta.html"
+                dynamicLink.href="soba_cetvrta.html"
                 var container = document.getElementById("lokot");
                 container.appendChild(dynamicLink);
 
