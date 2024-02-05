@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soba</title>
+  <link rel="stylesheet" href="soba_cetvrta.css">
+
+
+</head>
+<body>
+     <div class="tablica" id="tablica">
+        <p id="brojac"></p>
+        <div id="kraj"></div>
+        <p id="zadatak" class="zadatak"></p>
+        <table>
+            <tr id="" class="">
+                <button id="prviG" onclick="triNovaD('prviG')"></button>
+                <button id="drugiG" onclick="triNovaD('drugiG')"></button>
+                <button id="treciG" onclick="triNovaD('treciG')"></button>
+                <button id="cetvrtiG" onclick="triNovaD('cetvrtiG')"></button>
+                <button id="petiG" onclick="triNovaD('petiG')"></button>
+                <button id="sestiG" onclick="triNovaD('sestiG')"></button>
+            </tr>
+            <tr id="" class="">
+                <button id="prviF" onclick="triNovaC('prviG','drugiG','prviF')"></button>
+                <button id="drugiF" onclick="triNovaB('prviG','drugiG','treciG','drugiF')"></button>
+                <button id="treciF" onclick="triNovaB('drugiG','treciG','cetvrtiG','treciF')"></button>
+                <button id="cetvrtiF" onclick="triNovaB('treciG','cetvrtiG','petiG','cetvrtiF')"></button>
+                <button id="petiF" onclick="triNovaB('cetvrtiG','petiG','sestiG','petiF')"></button>
+                <button id="sestiF" onclick="triNovaC('petiG','sestiG','sestiF')"></button>
+            </tr>
+            <tr id="" class="">
+                <button id="prviE" onclick="triNovaC('prviF','drugiF','prviE')"></button>
+                <button id="drugiE" onclick="triNovaB('prviF','drugiF','treciF','drugiE')"></button>
+                <button id="treciE" onclick="triNovaB('drugiF','treciF','cetvrtiF','treciE')"></button>
+                <button id="cetvrtiE" onclick="triNovaB('treciF','cetvrtiF','petiF','cetvrtiE')"></button>
+                <button id="petiE" onclick="triNovaB('cetvrtiF','petiF','sestiF','petiE')"></button>
+                <button id="sestiE" onclick="triNovaC('petiF','sestiF','sestiE')"></button>
+            </tr>
+            <tr id="" class="">
+                <button id="prviD" onclick="triNovaC('prviE','drugiE','prviD')"></button>
+                <button id="drugiD" onclick="triNovaB('prviE','drugiE','treciE','drugiD')"></button>
+                <button id="treciD" onclick="triNovaB('drugiE','treciE','cetvrtiE','treciD')"></button>
+                <button id="cetvrtiD" onclick="triNovaB('treciE','cetvrtiE','petiE','cetvrtiD')"></button>
+                <button id="petiD" onclick="triNovaB('cetvrtiE','petiE','sestiE','petiD')"></button>
+                <button id="sestiD" onclick="triNovaC('petiE','sestiE','sestiD')"></button>
+            </tr>
+            <tr id="" class="">
+                <button id="prviC" onclick="triNovaC('prviD','drugiD','prviC')"></button>
+                <button id="drugiC" onclick="triNovaB('prviD','drugiD','treciD','drugiC')"></button>
+                <button id="treciC" onclick="triNovaB('drugiD','treciD','cetvrtiD','treciC')"></button>
+                <button id="cetvrtiC" onclick="triNovaB('treciD','cetvrtiD','petiD','cetvrtiC')"></button>
+                <button id="petiC" onclick="triNovaB('cetvrtiD','petiD','sestiD','petiC')"></button>
+                <button id="sestiC" onclick="triNovaC('petiD','sestiD','sestiC')"></button>
+            </tr>
+            <tr id="" class="">
+                <button class=""></button>
+                <button id="prviB" onclick="triNovaB('prviC','drugiC','treciC','prviB')"></button>
+                <button id="drugiB" onclick="triNovaB('drugiC','treciC','cetvrtiC','drugiB')"></button>
+                <button id="treciB" onclick="triNovaB('treciC','cetvrtiC','petiC','treciB')"></button>
+                <button id="cetvrtiB" onclick="triNovaB('cetvrtiC','petiC','sestiC','cetvrtiB')"></button>
+                <button class=""></button>
+            </tr>
+            <tr class="pocetak"><button></button><button></button>
+                <button id="prvi" onclick="triNova('prviB','drugiB','treciB',1)"></button>
+                <button id="drugi" onclick="triNova('drugiB','treciB','cetvrtiB',2)"></button><button></button><button></button>
+            </tr>
+
+        </table>
+        
+    </div>
+    <script src="soba_cetvrta.js"></script>
+</body>

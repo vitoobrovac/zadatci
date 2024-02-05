@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dcdcdc; /* Siva boja za zidove */
+}
+
+.room {
+    perspective: 800px;
+    width: 400px;
+    height: 300px;
+    position: relative;
+}
+
+.table {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(30deg);
+    width: 200px;
+    height: 120px;
+    background-color: #8b4513; /* Boja stola */
+    border-radius: 5px;
+    transform-style: preserve-3d;
+    transform-origin: center bottom;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.table-leg {
+    position: absolute;
+    height: 70px;
+    width: 10px;
+    background-color: #8b4513;
+    transform: translateY(50%) translateX(-50%) rotateX(90deg);
+}
+
+
+.table-leg.back-left { bottom: 0; left: 5%; }
+.table-leg.back-right { bottom: 0; right: 0; }
+
+.note {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff; 
+    text-align: justify;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    max-height: 30px;
+}
+.papir {
+    color: black;
+}
+.odgovor{
+    background-color: #ffffff;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    max-width: 60px;
+}
+.gumbic{
+    position: absolute;
+    top: 50%;
+    left: 55%;
+}
+.prvaSoba{
+    position: absolute;
+    top: 23%;
+    left: 32%;
+}
+.linkzasobu{
+    position: absolute;
+    top: 70%;
+    left: 13%;
+    padding: 3px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    color: black;
+    width: 75px;
+
+}
+.slika{
+    top: 0%;
+    position: absolute;
+    left: 30%;
+    max-width: 100px;
+    max-height: 100px;
+}
+img{
+    max-width: 150px;
+    max-height: 150px;
+}

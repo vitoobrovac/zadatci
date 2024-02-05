@@ -1,0 +1,30 @@
+.tablica{
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    max-width: 240px;
+
+}
+.pocetak{
+    margin-left: 50px;
+}
+button:hover{
+    background-color: red;
+}
+button{
+    width: 40px ;
+    height: 21.2px;
+}
+
+.light-red{
+    background-color: lightblue;
+}
+.zadatak{
+    padding: 3px;
+    background-color: rgb(159, 239, 239);
+    max-width: 50px;
+    text-align: center;
+    border-radius: 4px;
+    margin-left: 90px;
+
+}
