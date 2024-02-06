@@ -52,6 +52,8 @@ vrijeme.addEventListener("click", function() {
 function gotovo(){
     document.getElementById('brojac').innerHTML='vrijeme zaustavljeno'
     document.getElementById('bodovi').innerHTML='imaš '+maknibumb()+' boda';
+    var maknucemo=document.getElementById('novi-div');
+    maknucemo.parentNode.removeChild(maknucemo);
 }
 
    
