@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #okvir{
+            background-color: lightgrey;
+            height: 300px;
+            width: 300px;
+            border-radius: 8px;
+            border: 2px solid black;
+        }
+        #novi-div{
+            
+            background-image: url('meta.jpg'); 
+            height: 50px;
+            width: 50px;
+            border-radius: 25px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding: 6px; 
+        }
+        .stiki{
+            width: 60px;
+            height: 90px;
+        }.svedole{
+            display: flex;
+        }
+        #kreni{
+            max-height: 30px;
+            margin: 6px;
+        }
+        #brojac{
+            margin: 6px;
+            margin-left: 6px;
+            padding: 6px;
+            border-radius: 3px;
+            height: 20px;
+            
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+            background-color: rgb(92, 197, 232);
+        }
+        #bodovi{
+            margin: 6px;
+            padding: 6px;
+            background-color: lightcoral;
+            border-radius: 3px;
+            height: 20px;
+            
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+        }
+        .brojevi{
+            display: block;
+            background-color: lightgray;
+            width: fit-content;
+            margin: 5px;
+            margin-left: 40px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        #forum{
+            text-decoration: none;
+            color: black;
+            background-color: lightgrey;
+            border-radius: 3px;
+            border: 2px solid black;
+            font-size: small;
+            font-weight: bold;
+            margin: 6px;
+            padding: 6px;
+            width: fit-content;
+            height: fit-content;
+        }
+  
+    </style>
+    
+</head>
+<body>
+    
+    <div id="okvir">
+
+    </div>
+    <div class="svedole">
+        <img class="stiki" src="stiki.png" alt="">
+        <button id="kreni" onclick='stvorimetu()'>kreni</button>
+        <div class="brojevi">
+            <p id="brojac">vrijeme</p>
+            <p id="bodovi">bodovi</p>
+        </div>
+        <a id="forum" href="forum.html">vrati se na forum</a>
+    </div>
+
+
+    <script src="pucanje.js"></script>
+
+        
+        
+ 
+</body>
+</html>
