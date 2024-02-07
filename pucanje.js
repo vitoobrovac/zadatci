@@ -46,7 +46,9 @@ const vrijeme=document.getElementById('kreni');
 vrijeme.addEventListener("click", function() {
     odbrojavanje()})
 vrijeme.addEventListener("click", function() {
-    vrijeme.parentNode.removeChild(vrijeme)})
+    vrijeme.parentNode.removeChild(vrijeme);
+    var paragraf=document.getElementById('paragraf');
+    paragraf.parentNode.removeChild(paragraf);})
 
 
 function gotovo(){
