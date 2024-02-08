@@ -1,9 +1,7 @@
 .lokot{
     max-width: 100px;
     min-height: 200px;
-    position: absolute;
-    top: 30%;
-    left: 30%;
+    margin:25px;
   
 
 }
@@ -18,9 +16,7 @@
     
 }
 .zadatak{
-    position: absolute;
-    top: 20%;
-    right: 20%;
+    margin:20px;
     max-width: 200px;
 }
 .zadatak div{
