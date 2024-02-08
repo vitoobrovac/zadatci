@@ -1,7 +1,5 @@
 .tablica{
-    position: absolute;
-    top: 35%;
-    left: 40%;
+    margin:20px;
     max-width: 240px;
 
 }
