@@ -97,8 +97,8 @@
 </div>
 <div id="kreni">
     <div class="gd">
-        <button onclick="moveUp()">gore</button>
-        <button onclick="moveDown()">dole</button>
+        <button id="gore" onclick="moveUp()">gore</button>
+        <button id="dole" onclick="moveDown()">dole</button>
     </div>
     <button id="pokreni" onclick="pokreni()">pokreni</button>
     
@@ -139,7 +139,7 @@
     });
     
     const player = document.getElementById('player');
-    let playerPosition = 220;
+    let playerPosition =80;
 
     document.addEventListener('keydown', (event) => {
         if (event.key === 'ArrowUp') {
@@ -150,13 +150,13 @@
     });
 
     function moveUp() {
-        playerPosition += 10;
-        player.style.bottom = playerPosition + 'px';
+        playerPosition -= 10;
+        player.style.top = playerPosition + 'px';
     }
 
     function moveDown() {
-        playerPosition -= 10;
-        player.style.bottom = playerPosition + 'px';
+        playerPosition += 10;
+        player.style.top = playerPosition + 'px';
     }
 
     let intervalID; 
@@ -207,6 +207,8 @@
                 clearInterval(interval);
                 clearInterval(intervalID);
                 document.getElementById('zaustavi').remove();
+                document.getElementById('gore').remove();
+                document.getElementById('dole').remove();
             }
 
             if (carPosition ===0) {
