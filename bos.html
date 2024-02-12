@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crossy Road</title>
+<style>
+    #player {
+    position: absolute;
+    width: 25px;
+    height: 28.9px;
+    background-color: red;
+    bottom: 70%;
+    left: 5%;
+    transform: translateX(-50%);
+    background-image: url('tibor.jpg');
+    background-size: contain;
+     background-repeat: no-repeat;
+    border-radius: 4px;
+    border: 2px solid black;
+}
+
+.car {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: red;
+    border-radius: 7px;
+
+}
+#banana {
+    width: 150px;
+    height: 22px;
+    background-color: yellow;
+    
+    margin-top: 30px;
+
+    margin-left: 70px;
+    transform: translate(-50%, -50%);
+}
+
+#lolo {
+    width: 150px;
+    height: 22px;
+    background-color: yellow;
+    
+    margin-top: 150px;
+    margin-left: 70px;
+    transform: translate(-50%, -50%);
+}
+#pokreni{
+   margin-top: 5px;
+    margin-left: 40px;
+    background-color: darkslategray;
+    color: white;
+    border-radius: 4px;
+    border: 2px solid black;
+    padding: 5px;
+}
+.pokreni{
+   margin-top: 5px;
+    margin-left: 40px;
+    background-color: darkslategray;
+    color: white;
+    border-radius: 4px;
+    border: 2px solid black;
+    padding: 5px;
+}
+.gabi{
+    max-width: 50px;
+    max-height: 150px;
+    left: 53%;
+    top: 20%;
+    position: absolute;
+}
+.forum{
+   margin-top: 5px;
+    margin-left: 40px;
+    background-color: darkslategray;
+    color: white;
+    border-radius: 4px;
+    border: 2px solid black;
+    padding: 5px;}
+
+
+</style>
+</head>
+<body>
+
+<div class="sve">
+    <div>
+        <div id="banana">//////////////////////////////////</div>
+        <div id="player"></div>
+        <div id="lolo">//////////////////////////////////</div>
+    </div>
+    <img class="gabi" src="vrag.jpg" alt="">
+</div>
+<div id="kreni">
+    <div class="gd">
+        <button onclick="moveUp()">gore</button>
+        <button onclick="moveDown()">dole</button>
+    </div>
+    <button id="pokreni" onclick="pokreni()">pokreni</button>
+    
+    <a class='forum' href="forum.html">forum</a>
+    
+</div>
+<p id="bodovi">izbjegni sve kugle koje vrag baca na tebe</p>
+
+<script>
+    let odbrojavanje = 900;
+    let odbrojavanjeB = 23;
+    let bodovi=0;
+ 
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var banana = document.getElementById("banana");
+        var player = document.getElementById("player");
+        var lolo = document.getElementById('lolo');
+
+        function isCollide(element1, element2) {
+            var rect1 = element1.getBoundingClientRect();
+            var rect2 = element2.getBoundingClientRect();
+            return !(rect1.right < rect2.left || 
+                     rect1.left > rect2.right || 
+                     rect1.bottom < rect2.top+10 || 
+                     rect1.top > rect2.bottom-10);
+        }
+
+        function checkCollision() {
+            if (isCollide(player, banana) || isCollide(player, lolo)) {
+                console.log('dckdckd')
+                clearInterval(intervalID);
+                document.getElementById('zaustavi').remove();
+            }
+        }
+
+        setInterval(checkCollision, 100);
+    });
+    
+    const player = document.getElementById('player');
+    let playerPosition = 220;
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowUp') {
+            moveUp();
+        } else if (event.key === 'ArrowDown') {
+            moveDown();
+        }
+    });
+
+    function moveUp() {
+        playerPosition += 10;
+        player.style.bottom = playerPosition + 'px';
+    }
+
+    function moveDown() {
+        playerPosition -= 10;
+        player.style.bottom = playerPosition + 'px';
+    }
+
+    let intervalID; 
+
+    function pokreni() {
+        
+        console.log(odbrojavanje, odbrojavanjeB);
+        clearInterval(intervalID);
+        intervalID = setInterval(() => { 
+            createCar();
+        }, odbrojavanje);
+
+        var stariGumb = document.getElementById('pokreni');
+        var noviGumb = document.createElement('button');
+        noviGumb.textContent = 'zaustavi';
+        stariGumb.parentNode.replaceChild(noviGumb, stariGumb);
+        noviGumb.classList.add('pokreni');
+        noviGumb.id = 'zaustavi';
+        noviGumb.addEventListener('click', zaustavi);
+    }
+
+    function zaustavi() {
+        clearInterval(intervalID);
+        document.getElementById('zaustavi').remove();
+        idemo = document.createElement('button');
+        idemo.id = 'pokreni';
+        idemo.addEventListener('click', pokreni);
+        idemo.textContent = 'pokreni';
+        document.body.appendChild(idemo);
+    }
+
+    function createCar() {
+        const car = document.createElement('div');
+        car.classList.add('car');
+        car.style.top = (Math.random() * 0.8 + 0.1) * 200 + 'px';
+        car.style.right = 0;
+        document.body.appendChild(car);
+        moveCar(car);
+    }
+
+    function moveCar(car) {
+        let carPosition = 210;
+        const interval = setInterval(() => {
+            carPosition -= 3;
+            car.style.left = carPosition + 'px';
+
+            if (checkCollision(car)) {
+                clearInterval(interval);
+                clearInterval(intervalID);
+                document.getElementById('zaustavi').remove();
+            }
+
+            if (carPosition ===0) {
+                clearInterval(interval);
+                car.remove();
+                bodovi++;
+                document.getElementById('bodovi').innerHTML = 'bodovi: ' + bodovi;
+            }
+        }, odbrojavanjeB);
+    }
+
+    function checkCollision(car) {
+        const playerRect = player.getBoundingClientRect();
+        const carRect = car.getBoundingClientRect();
+        return !(playerRect.right < carRect.left ||
+                 playerRect.left > carRect.right ||
+                 playerRect.bottom < carRect.top ||
+                 playerRect.top > carRect.bottom);
+    }
+
+
+
+    
+
+</script>
+
+</body>
+</html>
